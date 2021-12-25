@@ -5,7 +5,13 @@ import matplotlib.pyplot as plt
 # ------------------------------------------------------------------------------
 # Visualisation Utilities
 # ------------------------------------------------------------------------------
-def plot_pair(img: torch.Tensor, cp: torch.Tensor) -> plt.figure():
+def inspect(img):
+    fig = plt.figure()
+    plt.imshow(img.movedim(0,-1))
+
+    return fig
+
+def inspect_pair(img: torch.Tensor, cp: torch.Tensor) -> plt.figure():
     fig, axs = plt.subplots(1, 2)
 
     axs[0].imshow(img.moveaxis(0,-1))
