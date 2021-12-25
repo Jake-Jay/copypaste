@@ -2,7 +2,7 @@ import torch
 import numpy as np
 import random
 
-from typing import Any, Sequence, Tuple, Union, Callable
+from typing import Sequence, Tuple, Union, Callable
 
 
 class CopyPaste:
@@ -60,12 +60,12 @@ class CopyPaste:
 
         Parameters
         ----------
-        img: torch.Tensor of shape (3, H, W)
+        img: torch.Tensor of shape (C, H, W)
             original image
 
         Returns
         --------
-        new_img: torch.Tensor of shape (3, H, W)
+        new_img: torch.Tensor of shape (C, H, W)
             tensor of the same dimensions as img
         """
 
@@ -104,7 +104,7 @@ class CopyPaste:
 
         Parameters
         ----------
-        img: torch.Tensor of shape (3, H, W)
+        img: torch.Tensor of shape (C, H, W)
             original image
         loc: (y, x)
             location of top left corner of crop box
@@ -123,9 +123,9 @@ class CopyPaste:
 
         Parameters
         ----------
-        img:  torch.Tensor of shape (3, H, W)
+        img:  torch.Tensor of shape (C, H, W)
             original image
-        patch: torch.Tensor of shape (3, Hp, Wp)
+        patch: torch.Tensor of shape (C, Hp, Wp)
             patch to paste of shape
         loc: (y, x)
             location of top left corner of the patch in img
